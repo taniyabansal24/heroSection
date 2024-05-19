@@ -6,28 +6,28 @@ const Hero = () => {
   const [direction, setDirection] = useState("");
   const [sliderItems, setSliderItems] = useState([
     {
-      src: "https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8am91cm5hbHxlbnwwfHwwfHx8MA%3D%3D",
+      src: "https://images.unsplash.com/photo-1715987587174-b8be6a743337?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "MAGIC SLIDER",
       type: "FLOWER",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.",
     },
     {
-      src: "https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGpvdXJuYWx8ZW58MHx8MHx8fDA%3D",
+      src: "https://images.unsplash.com/photo-1597839219216-a773cb2473e4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "MAGIC SLIDER",
       type: "NATURE",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.",
     },
     {
-      src: "https://images.unsplash.com/photo-1582137490248-c53207ec5602?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGpvdXJuYWx8ZW58MHx8MHx8fDA%3D",
+      src: "https://images.unsplash.com/photo-1613385119733-de72e1bb1c89?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "MAGIC SLIDER",
       type: "PLANT",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.",
     },
     {
-      src: "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGpvdXJuYWx8ZW58MHx8MHx8fDA%3D",
+      src: "https://images.unsplash.com/photo-1610872827842-bd0c8c461a6f?q=80&w=1612&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "MAGIC SLIDER",
       type: "JOURNAL",
       description:
@@ -72,17 +72,31 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="slider h-screen mt-[-50px] w-screen overflow-hidden relative" ref={sliderRef}>
+      <div
+        className="slider h-screen  w-[100%] overflow-hidden relative"
+        ref={sliderRef}
+      >
         <div className="list">
           {sliderItems.map((item, index) => (
-            <div key={index} className="item w-full h-full absolute inset-0 z-[1]">
-              <img className="w-full h-full object-cover" src={item.src} alt="" />
-              <div className="content absolute top-1/5 w-[1140px] max-w-[80%] left-1/2 transform -translate-x-1/2 pr-[30%] box-border text-white text-shadow-[0_5px_10px_#0004]">
-                <div className="title text-[5em] font-bold leading-[1.3em]">{item.title}</div>
-                <div className="type text-[5em] font-bold leading-[1.3em] text-[#14ff72cb]">{item.type}</div>
+            <div
+              key={index}
+              className="item w-full h-full absolute inset-0 z-[1] "
+            >
+              <img
+                className="w-full h-full object-cover"
+                src={item.src}
+                alt=""
+              />
+              <div className="content absolute top-20 md:top-32 w-[1140px] max-w-[80%] left-1/2 transform -translate-x-1/2 pr-[30%] box-border text-white text-shadow-[0_5px_10px_#0004]">
+                <div className="title text-[5em] font-bold leading-[1.3em]">
+                  {item.title}
+                </div>
+                <div className="type text-[5em] font-bold leading-[1.3em] text-[#14ff72cb]">
+                  {item.type}
+                </div>
                 <div className="description">{item.description}</div>
                 <div className="button grid grid-cols-[repeat(2,130px)] grid-rows-[40px] gap-[5px] mt-[20px]">
-                  <button className="border-none bg-[#eee] font-poppins font-medium cursor-pointer transition duration-400 tracking-wider hover:tracking-[3px]">
+                  <button className="border-none bg-[#eee] text-black font-medium cursor-pointer transition duration-400 tracking-wider hover:tracking-[3px]">
                     SEE MORE
                   </button>
                 </div>
@@ -91,10 +105,17 @@ const Hero = () => {
           ))}
         </div>
 
-        <div className="thumbnail absolute bottom-[50px] left-1/2 w-max z-[100] flex gap-[20px]">
+        <div className="thumbnail absolute bottom-[30px] left-1/2 w-max z-[100] flex gap-[20px]">
           {sliderItems.map((item, index) => (
-            <div key={index} className="item w-[150px] h-[220px] flex-shrink-0 relative">
-              <img className="w-full h-full object-cover rounded-[20px] shadow-[5px_0_15px_rgba(0,0,0,0.3)]" src={item.src} alt="" />
+            <div
+              key={index}
+              className="item w-[150px] md:h-[220px] h-[148px] flex-shrink-0 relative"
+            >
+              <img
+                className="w-full h-full object-cover rounded-[20px] shadow-[5px_0_15px_rgba(0,0,0,0.3)]"
+                src={item.src}
+                alt=""
+              />
             </div>
           ))}
         </div>
